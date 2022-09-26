@@ -1,22 +1,31 @@
 //import { describe, test, assert } from 'vitest'
 import { GET, POST } from '$routes/api/example/+server.js'
+import { doSomething } from '$lib/services/example'
+
+vi.mock('$lib/services/example', () => {
+	return {
+		doSomething: vi.fn()
+	}
+})
 
 describe('/example', () => {
 	describe('GET', () => {
 		test('without params', async () => {
+			doSomething.mockImplementation((n) => n * 3)
+
 			const url = new URL('/', 'http://localhost')
 			const response = await GET({ url })
 
-			assert.equal(response.status, 200)
-			assert.deepEqual(await response.json(), { a: 1 })
+			expect(response.status).toBe(200)
+			expect(await response.json()).toContain({ a: 3 })
 		})
 
 		test('with query', async () => {
 			const url = new URL('/?n=2', 'http://localhost')
 		  const response = await GET({ url })
 
-			assert.equal(response.status, 200)
-			assert.deepEqual(await response.json(), {a: 2})
+			expect(response.status).toBe(200)
+			expect(await response.json()).toContain({ a: 6 })
 		})
 	})
 
