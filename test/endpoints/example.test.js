@@ -1,5 +1,5 @@
 //import { describe, test, assert } from 'vitest'
-import { GET, POST } from '$routes/api/math/+server.js'
+import { GET, POST } from '$routes/api/example/+server.js'
 
 describe('/example', () => {
 	describe('GET', () => {
