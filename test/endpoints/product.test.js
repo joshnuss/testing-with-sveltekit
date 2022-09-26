@@ -6,7 +6,7 @@ describe('GET', () => {
 
 		await expect(GET({ params }))
 			.rejects
-			.toMatchObject({ status: 404 })
+			.toContain({ status: 404 })
 	})
 
 	test('returns 200 when id is not 1', async () => {
