@@ -1,11 +1,7 @@
 import { GET } from '$routes/players/[id]/+server.js'
 import { getPlayer } from '$lib/services/example'
 
-vi.mock('$lib/services/example', () => {
-	return {
-		getPlayer: vi.fn()
-	}
-})
+vi.mock('$lib/services/example')
 
 describe('GET', () => {
 	test('returns 404 when nothing found', async () => {

@@ -2,11 +2,7 @@
 import { GET, POST } from '$routes/api/example/+server.js'
 import { doSomething } from '$lib/services/example'
 
-vi.mock('$lib/services/example', () => {
-	return {
-		doSomething: vi.fn()
-	}
-})
+vi.mock('$lib/services/example')
 
 describe('/example', () => {
 	describe('GET', () => {
