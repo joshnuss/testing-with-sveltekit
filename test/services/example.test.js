@@ -1,11 +1,7 @@
 import { doSomething, getPlayer } from '$lib/services/example'
 import { fetch } from 'undici'
 
-vi.mock('undici', () => {
-  return {
-    fetch: vi.fn()
-  }
-})
+vi.mock('undici')
 
 describe('Example', () => {
   test('doSomething', async () => {
