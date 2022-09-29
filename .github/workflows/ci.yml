@@ -1,0 +1,14 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    types: [opened, edited, reopened]
+
+jobs:
+  test-and-deploy:
+    name: Test and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo hello
