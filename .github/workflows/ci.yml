@@ -60,4 +60,4 @@ jobs:
         run: pnpm prisma migrate deploy
 
       - name: Deploying
-        run: printenv
+        run: echo "deploying..."
