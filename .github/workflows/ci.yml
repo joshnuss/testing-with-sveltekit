@@ -57,7 +57,7 @@ jobs:
         run: pnpm install
 
       - name: Migrate database
-        run: pnpm prisma migrate deploy
+        run: pnpm prisma db push
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
