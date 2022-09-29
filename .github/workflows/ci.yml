@@ -40,6 +40,9 @@ jobs:
       - name: Run tests
         run: pnpm test run
 
+      - name: Lint
+        run: pnpm lint
+
   deploy:
     name: Deploy
     needs: test
