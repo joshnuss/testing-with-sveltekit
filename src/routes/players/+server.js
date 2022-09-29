@@ -3,5 +3,5 @@ import { db } from '$lib/services/db';
 
 export async function GET() {
 	const players = await db.player.findMany();
-	return json(players);
+	return json({ test: 1, players });
 }
