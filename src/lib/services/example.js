@@ -9,9 +9,5 @@ export async function getPlayer(id) {
 		r.json()
 	);
 
-	if (response.messageNumber == 10) {
-		return null;
-	}
-
 	return response;
 }
